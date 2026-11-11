@@ -61,7 +61,13 @@ sublist(lst, 0, 1, 2, 3, 4, 5)
 >>> print(ans)
 6143
 ```
-
+**Ответ**:  
+```
+lst = list(range(6000, 7000))
+ans = max(lst, key=lambda n: bin(n).count("1"))
+print(ans)
+```  
+![03](03/03.jpg)  
 
 ### Задание 4 **(2)**
 
