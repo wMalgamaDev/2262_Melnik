@@ -82,7 +82,14 @@ print(ans)
 >>> lst.sort (...)
 >>> print (lst)
 ['bye', 'hell', 'babye', 'hello', 'world']
-```
+```  
+**Ответ**:
+```  
+lst = ['hello', 'hell', 'bye', 'world', 'bybye']
+lst.sort(key= lambda n: (len(n), n))
+print (lst)
+```  
+![04](04/04.jpg)  
 
 ### Задание 5 **(2)**
 
