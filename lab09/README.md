@@ -340,6 +340,62 @@ _Что передается в функцию_ **toint**? _Что возвра�
 _Что делает функция_ **wrapper**?
 _Придумайте несколько примеров использования_ **toint**.
 
+**Ответ**:
+
+1. В toint передается функция fun. Функция toint вернет внутреннюю объявленную функцию wrapper как объект.
+2. Функция wrapper применяет переданную из toint функцию fun к распакованной последовательности args, в которой тип всех переменных переводится в int с помощью map.
+3. Примеры использования toint:
+
+```
+def toint(fun):
+    def wrapper(*args):
+        return fun(*map(int, args))
+    return wrapper
+
+int_mx = toint(max)
+
+print(int_mx(True, 2, "3"))
+```
+
+![01](11/01.png)
+Нахождение наибольшего числа среди последовательности сырых числовых данных.
+
+```
+def toint(fun):
+    def wrapper(*args):
+        return fun(*map(int, args))
+    return wrapper
+
+def div(x, y):
+    return x/y
+
+int_div = toint(div)
+
+print(int_div(True, "2"))
+```
+
+![02](11/02.png)
+Деление сырых числовых данных.
+
+```
+def toint(fun):
+    def wrapper(*args):
+        return fun(*map(int, args))
+    return wrapper
+
+def mult(*n):
+    r = 1
+    for i in n:
+        r *= i
+    return r
+
+int_mult = toint(mult)
+print(int_mult(True, "500", 2))
+```
+
+![03](11/03.png)  
+Умножение всех чисел из последовательности сырых числовых данных.
+
 ## Дополнительные задания
 
 ### Задание 1 **(3)**
